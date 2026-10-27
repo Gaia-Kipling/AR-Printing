@@ -1,0 +1,17 @@
+import type { Product } from '../data/products'
+
+const palettes: Record<string, [string, string]> = {
+  tee: ['#e8e6e1', '#178be8'], polo: ['#d9e0d3', '#ed3753'], hoodie: ['#343434', '#f1b821'], tote: ['#e4cba3', '#168bdb'], baby: ['#f4d6df', '#e63e73'],
+  mug: ['#f0eeeb', '#e94669'], cup: ['#b2d4e4', '#177cd0'], bottle: ['#c3d9d2', '#16a27a'], jar: ['#dbebf1', '#ed8d36'], keyring: ['#eedcaa', '#e94462'], print: ['#e8e3d9', '#207cc1'], water: ['#bfe2f2', '#ec3860'], custom: ['#e7d8ef', '#a440cf']
+}
+export default function ProductArt({ product, compact = false }: { product: Product; compact?: boolean }) {
+  const [base, accent] = palettes[product.visual] ?? palettes.custom
+  const clothing = ['tee', 'polo', 'hoodie', 'baby'].includes(product.visual)
+  return <div className={`product-art ${compact ? 'compact' : ''}`} aria-label={`${product.name} product illustration`} role="img" style={{ '--base': base, '--accent': accent } as React.CSSProperties}>
+    <span className="art-splat splat-one"/><span className="art-splat splat-two"/>
+    <svg viewBox="0 0 240 190" aria-hidden="true">
+      {clothing ? <><path className="object" d={product.visual === 'hoodie' ? 'M76 53 94 40h52l18 13 30 26-20 24-17-14v66H83V89l-17 14-20-24z' : product.visual === 'baby' ? 'M79 42h82l-8 64 20 42-24 8-18-30-18 30-24-8 20-42z' : 'M75 45 98 35h44l23 10 29 27-19 23-17-12v72H82V83l-17 12-19-23z'} fill="var(--base)" stroke="#171717" strokeWidth="3" strokeLinejoin="round"/><path d="M101 47q19 17 38 0" fill="none" stroke="#171717" strokeWidth="3"/><path d="M101 87h38" stroke="var(--accent)" strokeWidth="7" strokeLinecap="round"/></> : product.visual === 'tote' ? <><path className="object" d="M72 73h96l10 91H62z" fill="var(--base)" stroke="#171717" strokeWidth="3"/><path d="M91 77V60a29 29 0 0 1 58 0v17" fill="none" stroke="#171717" strokeWidth="6"/><path d="M101 113h38" stroke="var(--accent)" strokeWidth="8" strokeLinecap="round"/></> : product.visual === 'mug' ? <><path className="object" d="M70 60h92v92H70z" rx="8" fill="var(--base)" stroke="#171717" strokeWidth="3"/><path d="M162 77h16a20 20 0 0 1 0 42h-16" fill="none" stroke="#171717" strokeWidth="6"/><path d="M93 104h47" stroke="var(--accent)" strokeWidth="8" strokeLinecap="round"/></> : product.visual === 'jar' ? <><path className="object" d="M77 70h87v82H77z" fill="var(--base)" fillOpacity=".85" stroke="#171717" strokeWidth="3"/><path d="M73 65h95v13H73zM131 65V32" fill="var(--accent)" stroke="#171717" strokeWidth="3"/><path d="M99 110h43" stroke="#fff" strokeWidth="7" strokeLinecap="round"/></> : product.visual === 'keyring' ? <><circle className="object" cx="112" cy="101" r="38" fill="var(--base)" stroke="#171717" strokeWidth="3"/><circle cx="112" cy="101" r="17" fill="none" stroke="#171717" strokeWidth="4"/><path d="M142 72q22-27 41-7" fill="none" stroke="#171717" strokeWidth="5"/></> : product.visual === 'print' ? <><path className="object" d="M75 40h92v115H75z" fill="#fff" stroke="#171717" strokeWidth="3"/><path d="m90 125 21-28 15 15 15-23 17 36z" fill="var(--accent)"/><circle cx="143" cy="67" r="9" fill="#f1b821"/></> : <><rect className="object" x="93" y="38" width="55" height="121" rx="14" fill="var(--base)" stroke="#171717" strokeWidth="3"/><path d="M108 38v-9h25v9M104 90h33" fill="none" stroke="#171717" strokeWidth="4"/><path d="M106 109h29" stroke="var(--accent)" strokeWidth="8" strokeLinecap="round"/></>}
+      <path d="M119 173h49" stroke="var(--accent)" strokeWidth="4" strokeLinecap="round" opacity=".7"/>
+    </svg>
+  </div>
+}
