@@ -16,7 +16,7 @@ export const products: Product[] = [
   { id: 'bottle', name: '750 ml metal water bottles', category: 'Drinkware', price: 'R180', description: 'Reusable metal drinkware with your branding.', visual: 'bottle', image: 'images/products/metal-water-bottle.png' },
   { id: 'glass-jar', name: 'Glass jars with straw', category: 'Drinkware', price: 'R80', description: 'A personalised glass for sunny days and gifting.', visual: 'jar', image: 'images/products/glass-jar.png' },
   { id: 'keyring', name: 'Keyrings', category: 'Other printing', price: 'R35', description: 'A small keepsake or branded giveaway.', visual: 'keyring', image: 'images/products/keyring.png' },
-  { id: 'a4-prints', name: 'A4 prints', category: 'Other printing', price: 'R60', description: 'Bring your artwork and print it your way.', visual: 'print', image: 'images/products/a4-print.png' },
+  { id: 'a4-prints', name: 'A4 prints', category: 'Other printing', price: 'R60', description: 'Bring your artwork and print it your way.', visual: 'print', image: 'images/products/a4-prints.png' },
   { id: 'water', name: 'Branded bottled water · 500 ml', category: 'Other printing', price: 'R16 / bottle', description: 'Branded water for events; ask about case quantities.', visual: 'water', image: 'images/products/branded-water-bottle.png' },
-  { id: 'custom', name: 'Other custom printing', category: 'Other printing', description: 'Have another idea? Tell us what you have in mind.', visual: 'custom' }
+  { id: 'custom', name: 'Other custom printing', category: 'Other printing', description: 'Have another idea? Tell us what you have in mind.', visual: 'custom', image: 'images/products/other-custom-printing.png' }
 ]
