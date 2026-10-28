@@ -2,9 +2,10 @@ import type { Product } from '../data/products'
 
 const palettes: Record<string, [string, string]> = {
   tee: ['#e8e6e1', '#178be8'], polo: ['#d9e0d3', '#ed3753'], hoodie: ['#343434', '#f1b821'], tote: ['#e4cba3', '#168bdb'], baby: ['#f4d6df', '#e63e73'],
-  mug: ['#f0eeeb', '#e94669'], cup: ['#b2d4e4', '#177cd0'], bottle: ['#c3d9d2', '#16a27a'], jar: ['#dbebf1', '#ed8d36'], keyring: ['#eedcaa', '#e94462'], print: ['#e8e3d9', '#207cc1'], water: ['#bfe2f2', '#ec3860'], custom: ['#e7d8ef', '#a440cf']
+  mug: ['#f0eeeb', '#e94669'], cup: ['#b2d4e4', '#177cd0'], bottle: ['#c3d9d2', '#16a27a'], jar: ['#dbebf1', '#ed8d36'], keyring: ['#eedcaa', '#e94462'], print: ['#e8e3d9', '#207cc1'], water: ['#bfe2f2', '#ec3860'], custom: ['#F5F5F5', '#E50914']
 }
 export default function ProductArt({ product, compact = false }: { product: Product; compact?: boolean }) {
+  if (product.image) return <div className={`product-art photo ${compact ? 'compact' : ''}`}><img src={`${import.meta.env.BASE_URL}${product.image}`} alt={`${product.name} product`} loading={compact ? 'eager' : 'lazy'} decoding="async"/></div>
   const [base, accent] = palettes[product.visual] ?? palettes.custom
   const clothing = ['tee', 'polo', 'hoodie', 'baby'].includes(product.visual)
   return <div className={`product-art ${compact ? 'compact' : ''}`} aria-label={`${product.name} product illustration`} role="img" style={{ '--base': base, '--accent': accent } as React.CSSProperties}>
