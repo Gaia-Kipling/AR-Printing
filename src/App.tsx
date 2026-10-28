@@ -15,7 +15,7 @@ function WaLink({ message = generalMessage, children, className = '', label }: {
 }
 
 function ProductCard({ product }: { product: typeof products[number] }) {
-  return <article className="product-card"><ProductArt product={product}/><div className="product-info"><div className="product-heading"><h3>{product.name}</h3>{product.price && <span className="price-tag">{product.price}</span>}</div><p>{product.description}</p><WaLink message={productMessage(product.name, product.price)} className="product-order">Order this item <ArrowUpRight size={15}/></WaLink></div></article>
+  return <article className="product-card"><ProductArt product={product}/><div className="product-info"><div className="product-heading"><h3>{product.name}</h3></div>{product.price && <span className="price-tag">{product.price}</span>}<p>{product.description}</p><WaLink message={productMessage(product.name, product.price)} className="product-order">Order this item <ArrowUpRight size={15}/></WaLink></div></article>
 }
 
 function PageNavigation() {
@@ -96,7 +96,7 @@ function ProductCategory({ id, title, items }: { id: string; title: string; item
 }
 
 function PriceListPage() {
-  return <section className="price-section price-page" id="prices"><div className="price-intro"><h1>GOOD PRINTS.<br/><span>STRAIGHT PRICES.</span></h1><p>Here’s a starting point. Every design is different, so we’ll confirm your final quote before you order.</p><WaLink className="button button-light" message={generalMessage}>Ask us for a quote <ArrowRight size={16}/></WaLink><div className="price-splash">R</div></div><div className="price-lists">{priceGroups.map(group => <PriceGroup key={group.title} title={group.title} items={group.items}/ >)}<p className="price-note">Kids and adult T-shirt prices include full-front or full-back printing. Golf shirts vary by size and design; mug pricing varies by design. Ask us about case quantities for bottled water. Final pricing may depend on design, size, quantity and customisation. Please confirm your quote before placing an order.</p></div></section>
+  return <section className="price-section price-page" id="prices"><div className="price-intro"><h1>GOOD PRINTS.<br/><span>STRAIGHT PRICES.</span></h1><p>Here’s a starting point. Every design is different, so we’ll confirm your final quote before you order.</p><WaLink className="button button-light" message={generalMessage}>Ask us for a quote <ArrowRight size={16}/></WaLink><div className="price-splash">AR Printing</div></div><div className="price-lists">{priceGroups.map(group => <PriceGroup key={group.title} title={group.title} items={group.items}/ >)}<p className="price-note">Kids and adult T-shirt prices include full-front or full-back printing. Golf shirts vary by size and design; mug pricing varies by design. Ask us about case quantities for bottled water. Final pricing may depend on design, size, quantity and customisation. Please confirm your quote before placing an order.</p></div></section>
 }
 
 function ContactPage() {
