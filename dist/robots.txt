@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gaia-kipling.github.io/AR-Printing/sitemap.xml

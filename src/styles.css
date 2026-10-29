@@ -42,3 +42,4 @@
 @media(max-width:680px){.custom-visual .product-image-frame{width:79%;height:220px;min-height:220px;flex-basis:220px;border-width:7px}}
 .price-splash{font-size:clamp(70px,8.3vw,120px);white-space:nowrap;max-width:100%;line-height:.8}
 @media(max-width:680px){.price-splash{font-size:clamp(48px,15vw,78px)}}
+.not-found-page{min-height:55vh;padding-top:110px;padding-bottom:110px}.not-found-page h1{font:900 clamp(44px,7vw,76px)/.95 var(--display);margin:0}.not-found-page p{color:#777;margin:18px 0 26px}
